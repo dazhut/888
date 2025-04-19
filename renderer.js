@@ -1,7 +1,9 @@
 
-const THREE = require('three');
-const { GLTFLoader } = require('three/addons/loaders/GLTFLoader.js');
-const { OrbitControls } = require('three/addons/controls/OrbitControls.js'); // 新增
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+const loader = new THREE.GLTFLoader(); // 直接使用 THREE 下的构造函数
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 // 初始化场景、相机、渲染器
 const scene = new THREE.Scene();
